@@ -1,10 +1,12 @@
 // ComboBox.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import CpuInfo from './CpuInfo';
 
 const ComboBox = ({ dataEndpoint }) => {
   const [data, setData] = useState([]);
   const [selectedValue, setSelectedValue] = useState('');
+  
   useEffect(() => {
     fetchData();
   }, []);
@@ -13,6 +15,8 @@ const ComboBox = ({ dataEndpoint }) => {
     try {
       const response = await axios.get(dataEndpoint);
       setData(response.data);
+      setSelectedValue();
+      <CpuInfo selectedValue />
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -22,6 +26,8 @@ const ComboBox = ({ dataEndpoint }) => {
     const value = event.target.value;
     // Do something with the selected value
     console.log('Selected value:', value);
+    fetchData();
+    
   };
 
   return (

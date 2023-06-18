@@ -1,12 +1,18 @@
+import { useState } from "react";
 import ComboBox from "./ComboBox";
-
+import CpuInfo from "./CpuInfo";
 const ComponentCpu = () => {
-    return (
+    const [componentId, setComponentId] = useState('');
+    const handleIdfromChild = (id) => {
+        setComponentId(id);
+    };
+        return (
         <div>
             <h2>
                 Cpu
             </h2>
-            <ComboBox dataEndpoint="http://localhost:8080/api/cpu" />
+            <ComboBox dataEndpoint="http://localhost:8080/api/cpu" idInfo={handleIdfromChild}/>
+            <CpuInfo componentId={handleIdfromChild} />
         </div>
     )
 }
