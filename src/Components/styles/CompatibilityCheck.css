@@ -1,0 +1,28 @@
+.compatibility-line {
+
+
+    width: auto;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    flex-direction: row;
+    text-align: justify;
+    border-radius: 10px;
+
+
+}
+
+.compatible {
+    background-color: #59f859;
+}
+
+.incompatible {
+    background-color: #ff5252;
+}
+
+.Compability {
+    color: #2c2828;
+    text-align: center;
+    text-align-all: center;
+}

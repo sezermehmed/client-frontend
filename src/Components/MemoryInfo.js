@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 
-const MemoryInfo = ({ componentId }) => {
+const MemoryInfo = ({componentId, onPriceChange}) => {
     const [memoryData, setMemoryData] = useState(null);
-
+    const [price, setPrice] = useState(0);
     useEffect(() => {
         const fetchMemoryData = async () => {
             try {
@@ -10,6 +10,10 @@ const MemoryInfo = ({ componentId }) => {
                 const data = await response.json();
 
                 setMemoryData(data);
+
+                const memoryprice = data.price;
+                setPrice(memoryprice);
+                onPriceChange(memoryprice);
             } catch (error) {
                 console.error('Error fetching Memory data:', error);
             }
@@ -18,7 +22,7 @@ const MemoryInfo = ({ componentId }) => {
         if (componentId) {
             fetchMemoryData();
         }
-    }, [componentId]);
+    }, [componentId, onPriceChange]);
 
     if (!componentId) {
         return <p>No Memory component selected.</p>;
