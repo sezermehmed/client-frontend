@@ -1,0 +1,29 @@
+/* body.css */
+
+.container {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+  }
+  
+  .header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .section {
+    background-color: #a5a5a5;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .section p {
+    margin-bottom: 5px;
+  }
+  
