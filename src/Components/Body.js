@@ -11,11 +11,11 @@ const ComponentCpu = () => {
             <h2>
                 Cpu
             </h2>
-            <ComboBox dataEndpoint="http://localhost:8080/api/cpu" idInfo={handleIdfromChild}/>
-            <CpuInfo componentId={handleIdfromChild} />
+            <ComboBox dataEndpoint="http://localhost:8080/api/cpu"  setComponentId={setComponentId} />
+            <CpuInfo componentId={componentId} />
         </div>
-    )
-}
+    );
+};
 const ComponentMemory = () => {
     return (
         <div>
@@ -24,8 +24,8 @@ const ComponentMemory = () => {
             </h2>
             <ComboBox dataEndpoint="http://localhost:8080/api/memory" />
         </div>
-    )
-}
+    );
+};
 const ComponentMotherboard = () => {
     return (
         <div>
@@ -34,8 +34,8 @@ const ComponentMotherboard = () => {
             </h2>
             <ComboBox dataEndpoint="http://localhost:8080/api/motherboard" />
         </div>
-    )
-}
+    );
+};
 const Body = () => {
     return (
       <section>
