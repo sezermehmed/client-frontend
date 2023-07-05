@@ -1,23 +1,24 @@
 import React from "react";
 import './styles/CompatibilityCheck.css';
 
+
 const CompatibilityCheck = ({
                                 cpuPrice,
                                 memoryPrice,
                                 motherboardPrice,
-                                supportedMemoryCPU,
-                                socketMemory,
-                                supportedMotherboard
+
+                                supportedSocketCpu,
+                                supportedSocketMotherboard,
+                                supportedSocketMemory
                             }) => {
-    //const isCompatible = cpuPrice > 0 && memoryPrice > 0 && motherboardPrice > 0;
-    supportedMemoryCPU = 'DDR4';
-    socketMemory = 'DDR4';
-    supportedMotherboard = 'DDR4';
-    const isCompatible = socketMemory === supportedMemoryCPU && socketMemory === supportedMotherboard;
+
+    const isCompatible = supportedSocketMemory === supportedSocketCpu && supportedSocketMemory === supportedSocketMotherboard;
     const compatibilityLineClass = isCompatible ? 'compatible' : 'incompatible';
+
 
     return (
         <div>
+
             <h2>Compatibility Check</h2>
             <p>CPU Price: {cpuPrice}</p>
             <p>Memory Price: {memoryPrice}</p>
@@ -25,7 +26,9 @@ const CompatibilityCheck = ({
             <p>Total Price: {cpuPrice + memoryPrice + motherboardPrice}</p>
 
             <div className={`compatibility-line ${compatibilityLineClass}`}>
-                <p className="Compability">Compatibility: {isCompatible ? "Compatible" : "Incompatible"}</p>
+                <p className="Compatibility">Compatibility: {isCompatible ? "Compatible" : "Incompatible"} </p>
+
+
             </div>
 
         </div>

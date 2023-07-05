@@ -1,7 +1,8 @@
+import "./styles/footer.css"
 const Footer = () => {
     return (
       <footer>
-        <h2>This is footer</h2>
+        <h2><a>Sezer Mehmed</a></h2>
       </footer>
     );
   };

@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 
-const MotherboardInfo = ({componentId, onPriceChange}) => {
+const MotherboardInfo = ({componentId, onPriceChange, onSupportedSocketChange}) => {
     const [motherboardData, setMotherboardData] = useState(null);
     const [price, setPrice] = useState(0);
+    const [supportedSocket, setSupportedSocket] = useState('');
 
     useEffect(() => {
         const fetchMotherboardData = async () => {
@@ -15,6 +16,10 @@ const MotherboardInfo = ({componentId, onPriceChange}) => {
                 const motherboardprice = data.price;
                 setPrice(motherboardprice);
                 onPriceChange(motherboardprice);
+
+                const socket = data.supported_memory;
+                setSupportedSocket(socket)
+                onSupportedSocketChange(socket);
             } catch (error) {
                 console.error('Error fetching Motherboard data:', error);
             }
@@ -23,7 +28,7 @@ const MotherboardInfo = ({componentId, onPriceChange}) => {
         if (componentId) {
             fetchMotherboardData();
         }
-    }, [componentId, onPriceChange]);
+    }, [componentId, onPriceChange, onSupportedSocketChange]);
 
     if (!componentId) {
         return <p>No Motherboard component selected.</p>;

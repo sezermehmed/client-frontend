@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 
-const CpuInfo = ({componentId, onPriceChange}) => {
+const CpuInfo = ({componentId, onPriceChange, onSupportedSocketChange}) => {
     const [cpuData, setCpuData] = useState(null);
     const [price, setPrice] = useState(0);
-
+    const [supportedSocket, setSupportedSocket] = useState('');
     useEffect(() => {
         const fetchCpuData = async () => {
             try {
@@ -16,7 +16,12 @@ const CpuInfo = ({componentId, onPriceChange}) => {
                 setPrice(cpuPrice);
 
                 onPriceChange(cpuPrice);
+                const socket = data.supportedMemory;
+                //console.log(socket)
+                setSupportedSocket(socket)
+                onSupportedSocketChange(socket);
 
+                //  console.log(supportedSocketCpu)
             } catch (error) {
                 console.error('Error fetching CPU data:', error);
             }
@@ -25,7 +30,8 @@ const CpuInfo = ({componentId, onPriceChange}) => {
         if (componentId) {
             fetchCpuData();
         }
-    }, [componentId, onPriceChange]);
+    }, [componentId, onPriceChange, onSupportedSocketChange]);
+
 
     if (!componentId) {
         return <p>No CPU component selected.</p>;
@@ -34,6 +40,7 @@ const CpuInfo = ({componentId, onPriceChange}) => {
     if (!cpuData) {
         return <p>Loading CPU data...</p>;
     }
+
 
     return (
         <div>

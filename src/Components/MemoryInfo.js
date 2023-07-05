@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 
-const MemoryInfo = ({componentId, onPriceChange}) => {
+const MemoryInfo = ({componentId, onPriceChange, onSupportedSocketChange}) => {
     const [memoryData, setMemoryData] = useState(null);
     const [price, setPrice] = useState(0);
+    const [supportedSocket, setSupportedSocket] = useState('');
     useEffect(() => {
         const fetchMemoryData = async () => {
             try {
@@ -14,6 +15,11 @@ const MemoryInfo = ({componentId, onPriceChange}) => {
                 const memoryprice = data.price;
                 setPrice(memoryprice);
                 onPriceChange(memoryprice);
+
+                const socket = data.socket;
+                setSupportedSocket(socket)
+                onSupportedSocketChange(socket);
+
             } catch (error) {
                 console.error('Error fetching Memory data:', error);
             }
@@ -22,7 +28,7 @@ const MemoryInfo = ({componentId, onPriceChange}) => {
         if (componentId) {
             fetchMemoryData();
         }
-    }, [componentId, onPriceChange]);
+    }, [componentId, onPriceChange, onSupportedSocketChange]);
 
     if (!componentId) {
         return <p>No Memory component selected.</p>;
