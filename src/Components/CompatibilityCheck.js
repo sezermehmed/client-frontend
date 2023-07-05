@@ -18,7 +18,6 @@ const CompatibilityCheck = ({
 
     return (
         <div>
-
             <h2>Compatibility Check</h2>
             <p>CPU Price: {cpuPrice}</p>
             <p>Memory Price: {memoryPrice}</p>
@@ -27,8 +26,6 @@ const CompatibilityCheck = ({
 
             <div className={`compatibility-line ${compatibilityLineClass}`}>
                 <p className="Compatibility">Compatibility: {isCompatible ? "Compatible" : "Incompatible"} </p>
-
-
             </div>
 
         </div>

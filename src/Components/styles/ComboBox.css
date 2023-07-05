@@ -1,11 +1,11 @@
-/* ComboBox */
+
 .combobox {
     position: relative;
     display: inline-block;
     width: 200px;
 }
 
-/* Select element */
+
 .combobox select {
     width: 100%;
     padding: 10px 30px 10px 10px;
@@ -30,10 +30,6 @@
 
 }
 
-
-
-
-
 .combobox select::after {
     content: "";
     position: absolute;
@@ -45,8 +41,7 @@
     border-width: 2px;
     border-style: solid;
     border-color: #999;
-    /*border-top-color: transparent;*/
-    /*border-right-color: transparent;*/
+
     transition: border-color 0.3s ease;
     pointer-events: auto;
 
@@ -55,7 +50,7 @@
     border-top: 5px solid #555;
 }
 
-/* Hover/focus styles */
+
 .combobox select:hover,
 .combobox select:focus {
     outline: none;
@@ -64,34 +59,30 @@
     cursor: pointer;
 }
 
-/* Arrow icon animation on hover/focus */
+
 .combobox select:hover::after,
 .combobox select:focus::after {
     border-color: #666;
     border-top-color: #888;
 }
 
-/* Disabled styles */
+
 .combobox select:disabled {
     background-color: #f0f0f0;
     color: #999;
 }
 
-/* Disabled arrow icon */
+
 .combobox select:disabled::after {
     border-color: #ccc;
 }
 
-/* Option styles */
+
 .combobox select option {
     background-color: #fff;
     color: #333;
 }
 
-/*!* Placeholder option *!*/
-/*.combobox select option[value=""] {*/
-/*    color: #999;*/
-/*}*/
 
 .combobox select option {
     background-color: #f2f2f2;

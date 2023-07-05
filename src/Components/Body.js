@@ -45,7 +45,6 @@ const Body = () => {
     };
 
 
-
     const handleSupportedSocketCpu = (supportedSocket) => {
         setSupportedSocketCpu(supportedSocket);
     };
@@ -57,68 +56,68 @@ const Body = () => {
         setSupportedSocketMotherboard(supportedSocket);
     };
     return (
-<body>
-<div>
-    <section>
-        <CompatibilityCheck
-            cpuPrice={cpuPrice}
-            memoryPrice={memoryPrice}
-            motherboardPrice={motherboardPrice}
+        <body>
+        <div>
+            <section>
+                <CompatibilityCheck
+                    cpuPrice={cpuPrice}
+                    memoryPrice={memoryPrice}
+                    motherboardPrice={motherboardPrice}
 
-            supportedSocketCpu={supportedSocketCpu}
-            supportedSocketMemory={supportedSocketMemory}
-            supportedSocketMotherboard={supportedSocketMotherboard}
-        />
+                    supportedSocketCpu={supportedSocketCpu}
+                    supportedSocketMemory={supportedSocketMemory}
+                    supportedSocketMotherboard={supportedSocketMotherboard}
+                />
 
-    </section>
-    <section className="ComponentWrapper">
+            </section>
+            <section className="ComponentWrapper">
 
-        <div className="ComponentInfo">
-            <h2>CPU</h2>
-            <ComboBox
-                dataEndpoint="http://localhost:8080/api/cpu"
-                idInfo={handleCpuComponentId}
+                <div className="ComponentInfo">
+                    <h2>CPU</h2>
+                    <ComboBox
+                        dataEndpoint="http://localhost:8080/api/cpu"
+                        idInfo={handleCpuComponentId}
 
-            />
-            <CpuInfo
-                componentId={cpuComponentId}
-                onPriceChange={handleCpuPriceChange}
-                onSupportedSocketChange={handleSupportedSocketCpu}
-            />
+                    />
+                    <CpuInfo
+                        componentId={cpuComponentId}
+                        onPriceChange={handleCpuPriceChange}
+                        onSupportedSocketChange={handleSupportedSocketCpu}
+                    />
+                </div>
+                <section className="ComponentWrapper"></section>
+                <div className="ComponentInfo">
+                    <h2>Memory</h2>
+                    <ComboBox
+                        dataEndpoint="http://localhost:8080/api/memory"
+                        idInfo={handleMemoryComponentId}
+                    />
+                    <MemoryInfo
+                        componentId={memoryComponentId}
+                        onPriceChange={handleMemoryPriceChange}
+                        onSupportedSocketChange={handleSupportedSocketMemory}
+                    />
+                </div>
+                <section className="ComponentWrapper"></section>
+                <div className="ComponentInfo">
+                    <h2>Motherboard</h2>
+                    <ComboBox
+                        dataEndpoint="http://localhost:8080/api/motherboard"
+                        idInfo={handleMotherboardComponentId}
+
+                    />
+                    <MotherboardInfo
+                        componentId={motherboardComponentId}
+                        onPriceChange={handleMotherboardPriceChange}
+                        onSupportedSocketChange={handleSupportedSocketMotherboard}
+                    />
+                </div>
+            </section>
+
+
         </div>
-        <section className="ComponentWrapper"></section>
-        <div className="ComponentInfo">
-            <h2>Memory</h2>
-            <ComboBox
-                dataEndpoint="http://localhost:8080/api/memory"
-                idInfo={handleMemoryComponentId}
-            />
-            <MemoryInfo
-                componentId={memoryComponentId}
-                onPriceChange={handleMemoryPriceChange}
-                onSupportedSocketChange={handleSupportedSocketMemory}
-            />
-        </div>
-        <section className="ComponentWrapper"></section>
-        <div className="ComponentInfo">
-            <h2>Motherboard</h2>
-            <ComboBox
-                dataEndpoint="http://localhost:8080/api/motherboard"
-                idInfo={handleMotherboardComponentId}
 
-            />
-            <MotherboardInfo
-                componentId={motherboardComponentId}
-                onPriceChange={handleMotherboardPriceChange}
-                onSupportedSocketChange={handleSupportedSocketMotherboard}
-            />
-        </div>
-    </section>
-
-
-</div>
-
-</body>
+        </body>
 
 
     );

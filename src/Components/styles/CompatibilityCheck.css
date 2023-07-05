@@ -1,6 +1,4 @@
 .compatibility-line {
-
-
     width: auto;
     height: 25px;
     display: flex;
@@ -9,10 +7,7 @@
     flex-direction: row;
     text-align: justify;
     border-radius: 10px;
-
-
 }
-
 .compatible {
     background-color: #59f859;
 }

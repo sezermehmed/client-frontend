@@ -17,11 +17,9 @@ const CpuInfo = ({componentId, onPriceChange, onSupportedSocketChange}) => {
 
                 onPriceChange(cpuPrice);
                 const socket = data.supportedMemory;
-                //console.log(socket)
                 setSupportedSocket(socket)
                 onSupportedSocketChange(socket);
 
-                //  console.log(supportedSocketCpu)
             } catch (error) {
                 console.error('Error fetching CPU data:', error);
             }
