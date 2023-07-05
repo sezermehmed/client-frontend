@@ -43,9 +43,9 @@ const MotherboardInfo = ({componentId, onPriceChange, onSupportedSocketChange}) 
             <h2>Motherboard Information</h2>
             <div>
                 <h3>{motherboardData.name}</h3>
-                <p>Component Type: {motherboardData.componentType}</p>
-                <p>Part Number: {motherboardData.partNumber}</p>
-                <p>Socket: {motherboardData.socket}</p>
+                {/*<p>Component Type: {motherboardData.componentType}</p>*/}
+                {/*<p>Part Number: {motherboardData.partNumber}</p>*/}
+                {/*<p>Socket: {motherboardData.socket}</p>*/}
                 <p>Supported Memory: {motherboardData.supported_memory}</p>
                 <p>Price: {motherboardData.price}</p>
             </div>

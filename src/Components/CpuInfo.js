@@ -45,10 +45,10 @@ const CpuInfo = ({componentId, onPriceChange, onSupportedSocketChange}) => {
             <h2>CPU Information</h2>
             <div>
                 <h3>{cpuData.name}</h3>
-                <p>Component Type: {cpuData.componentType}</p>
-                <p>Part Number: {cpuData.partNumber}</p>
+                {/*<p>Component Type: {cpuData.componentType}</p>*/}
+                {/*<p>Part Number: {cpuData.partNumber}</p>*/}
                 <p>Supported Memory: {cpuData.supportedMemory}</p>
-                <p>Socket: {cpuData.socket}</p>
+                {/*<p>Socket: {cpuData.socket}</p>*/}
                 <p>Price: {cpuData.price}</p>
             </div>
         </div>
