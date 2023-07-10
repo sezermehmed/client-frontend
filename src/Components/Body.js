@@ -66,24 +66,18 @@ const Body = () => {
 
                     supportedSocketCpu={supportedSocketCpu}
                     supportedSocketMemory={supportedSocketMemory}
-                    supportedSocketMotherboard={supportedSocketMotherboard}
-                />
-
+                    supportedSocketMotherboard={supportedSocketMotherboard}/>
             </section>
             <section className="ComponentWrapper">
-
                 <div className="ComponentInfo">
                     <h2>CPU</h2>
                     <ComboBox
                         dataEndpoint="http://localhost:8080/api/cpu"
-                        idInfo={handleCpuComponentId}
-
-                    />
+                        idInfo={handleCpuComponentId}/>
                     <CpuInfo
                         componentId={cpuComponentId}
                         onPriceChange={handleCpuPriceChange}
-                        onSupportedSocketChange={handleSupportedSocketCpu}
-                    />
+                        onSupportedSocketChange={handleSupportedSocketCpu}/>
                 </div>
                 <section className="ComponentWrapper"></section>
                 <div className="ComponentInfo">
@@ -95,17 +89,14 @@ const Body = () => {
                     <MemoryInfo
                         componentId={memoryComponentId}
                         onPriceChange={handleMemoryPriceChange}
-                        onSupportedSocketChange={handleSupportedSocketMemory}
-                    />
+                        onSupportedSocketChange={handleSupportedSocketMemory}/>
                 </div>
                 <section className="ComponentWrapper"></section>
                 <div className="ComponentInfo">
                     <h2>Motherboard</h2>
                     <ComboBox
                         dataEndpoint="http://localhost:8080/api/motherboard"
-                        idInfo={handleMotherboardComponentId}
-
-                    />
+                        idInfo={handleMotherboardComponentId}/>
                     <MotherboardInfo
                         componentId={motherboardComponentId}
                         onPriceChange={handleMotherboardPriceChange}
@@ -113,13 +104,8 @@ const Body = () => {
                     />
                 </div>
             </section>
-
-
         </div>
-
         </body>
-
-
     );
 };
 export default Body;

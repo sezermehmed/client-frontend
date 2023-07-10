@@ -9,9 +9,7 @@ const MemoryInfo = ({componentId, onPriceChange, onSupportedSocketChange}) => {
             try {
                 const response = await fetch(`http://localhost:8080/api/memory/${componentId}`);
                 const data = await response.json();
-
                 setMemoryData(data);
-
                 const memoryprice = data.price;
                 setPrice(memoryprice);
                 onPriceChange(memoryprice);
@@ -43,8 +41,6 @@ const MemoryInfo = ({componentId, onPriceChange, onSupportedSocketChange}) => {
             <h2>Memory Information</h2>
             <div>
                 <h3>{memoryData.name}</h3>
-                {/*<p>Component Type: {memoryData.componentType}</p>*/}
-                {/*<p>Part Number: {memoryData.partNumber}</p>*/}
                 <p>Socket: {memoryData.socket}</p>
                 <p>Price: {memoryData.price}</p>
             </div>
